@@ -28,4 +28,28 @@ public class ValidatorTest {
         //then
         assertTrue(isValid);
     }
+
+    @Test
+    public void isValidDayIfFrom1To31(){
+        //given
+        String pesel = "82050307214";
+
+        //when
+        boolean isValid = Validator.peselValidation(pesel);
+
+        //then
+        assertTrue(isValid);
+    }
+
+    @Test
+    public void isValidDayIfEquals44(){
+        //given
+        String pesel = "82054407214";
+
+        //when
+        boolean isValid = Validator.peselValidation(pesel);
+
+        //then
+        assertFalse(isValid);
+    }
 }

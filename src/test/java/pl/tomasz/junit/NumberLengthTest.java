@@ -11,7 +11,7 @@ public class NumberLengthTest {
         String number = "1234";
 
         //when
-        boolean isValid = NumberLength.numberValidator(number);
+        boolean isValid = NumberLength.numberValidatorString(number);
 
         //then
         assertFalse(isValid);
@@ -23,14 +23,33 @@ public class NumberLengthTest {
         String number = "12";
 
         //when
-        boolean isValid = NumberLength.numberValidator(number);
+        boolean isValid = NumberLength.numberValidatorString(number);
 
         //then
         assertFalse(isValid);
     }
 
     @Test
-    public void isNotValidIfNumberLegth2(){
+    public void isValidIfNumberLegth2String(){
+        //given
+        String number = "123";
 
+        //when
+        boolean isValid = NumberLength.numberValidatorString(number);
+
+        //then
+        assertTrue(isValid);
+    }
+
+    @Test
+    public void isValidIfNumberLength3FromInteger(){
+        //given
+        int number = 123;
+
+        //when
+        boolean isValid = NumberLength.numberValidatorInteger(number);
+
+        //then
+        assertTrue(isValid);
     }
 }
